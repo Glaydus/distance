@@ -4,8 +4,8 @@ import "math"
 
 // Coord represents a geographic coordinate with latitude and longitude.
 type Coord struct {
-	Lat float64
-	Lon float64
+	Lat float64 `json:"lat" db:"lat"`
+	Lon float64 `json:"lon" db:"lon"`
 }
 
 // DistanceTo calculates the distance to another coordinate in meters.

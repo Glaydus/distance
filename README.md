@@ -4,7 +4,7 @@
 [![Release](https://img.shields.io/github/v/release/glaydus/distance)](https://github.com/glaydus/distance/releases/latest)
 [![Go Reference](https://pkg.go.dev/badge/github.com/glaydus/distance.svg)](https://pkg.go.dev/github.com/glaydus/distance)
 ![GitHub go.mod Go version](https://img.shields.io/github/go-mod/go-version/glaydus/distance)
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 A Go package for calculating geodesic distances between geographic coordinates using the **Vincenty Inverse Formula** on the WGS84 ellipsoid.
 
