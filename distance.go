@@ -52,7 +52,7 @@ func DistanceBetween(startLatitude, startLongitude, endLatitude, endLongitude fl
 	sinU1sinU2 := sinU1 * sinU2
 
 	var (
-		aa         float64
+		A          float64
 		sigma      float64
 		deltaSigma float64
 		cosSqAlpha float64
@@ -79,7 +79,7 @@ func DistanceBetween(startLatitude, startLongitude, endLatitude, endLongitude fl
 		cos2SM = iif(cosSqAlpha == 0, float64(0.0), cosSigma-2.0*sinU1sinU2/cosSqAlpha) // (18)
 
 		uSquared := cosSqAlpha * aSqMinusBSqOverBSq // definition
-		aa = 1 + (uSquared/16384.0)*                // (3)
+		A = 1 + (uSquared/16384.0)*                 // (3)
 			(4096.0+uSquared*(-768+uSquared*(320.0-175.0*uSquared)))
 		B := (uSquared / 1024.0) * // (4)
 			(256.0 + uSquared*(-128.0+uSquared*(74.0-47.0*uSquared)))
@@ -102,7 +102,7 @@ func DistanceBetween(startLatitude, startLongitude, endLatitude, endLongitude fl
 			break
 		}
 	}
-	distance = (b * aa * (sigma - deltaSigma))
+	distance = (b * A * (sigma - deltaSigma))
 	mi = roundInt(distance * 0.000621371192)
 	km = roundInt(distance / 1000)
 	return
